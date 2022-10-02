@@ -11,10 +11,6 @@ public class Guitar extends Instrument{
         this.description = "This is a guitar";
     }
 
-    public int getStringsCount(){
-        return this.strings;
-    }
-
     public int getStrings() {
         return strings;
     }

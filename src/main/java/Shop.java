@@ -1,4 +1,3 @@
-import instruments.Trumpet;
 import interfaces.ISell;
 
 import java.util.ArrayList;
@@ -14,7 +13,7 @@ public class Shop {
 
     public Shop(String name) {
         this.name = name;
-        this.stock = new ArrayList<ISell>();
+        this.stock = new ArrayList<>();
     }
 
     public String getName() {
@@ -30,9 +29,12 @@ public class Shop {
     }
 
     public void removeItem(ISell item){
-
         this.stock.remove(item);
     }
 
-
+    public double getPotentialProfits() {
+        return stock.stream()
+                .mapToDouble(ISell::calculateMarkup)
+                .sum();
+    }
 }

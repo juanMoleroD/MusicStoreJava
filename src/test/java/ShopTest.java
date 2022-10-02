@@ -11,11 +11,13 @@ class ShopTest {
 
     Shop shop;
     Item item;
+    Instrument trumpet;
 
 
     @BeforeEach
     void setUp() {
         item = new Item(10,15, "This is a pick");
+        trumpet = new Trumpet(100, 150);
         shop = new Shop("theTrumpet");
     }
 
@@ -31,7 +33,6 @@ class ShopTest {
 
     @Test
     void canStockUpInstruments() {
-        Trumpet trumpet = new Trumpet(100, 150);
         shop.addItemToStock(trumpet);
         assertEquals(trumpet, shop.getStock().get(0));
     }
@@ -43,6 +44,7 @@ class ShopTest {
         assertEquals(1, shop.getStock().size());
     }
 
+//    this tests forced us to implement ISell;
 //    @Test
 //    void canOnlyAddSellableItemsToStock() {
 //        String text = "This is a string";
@@ -57,7 +59,10 @@ class ShopTest {
         assertEquals(0, shop.getStock().size());
     }
 
-
-
-
+    @Test
+    void canCalculateTotalPotentialProfit() {
+        shop.addItemToStock(item);
+        shop.addItemToStock(trumpet);
+        assertEquals(55, shop.getPotentialProfits());
+    }
 }

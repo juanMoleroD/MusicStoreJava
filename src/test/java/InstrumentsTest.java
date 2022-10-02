@@ -1,6 +1,7 @@
 
 import instruments.Guitar;
 import instruments.Instrument;
+import instruments.InstrumentType;
 import instruments.Trumpet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,5 +38,10 @@ public class InstrumentsTest {
     void canBePlayed() {
         assertEquals("Toot", trumpet.play());
         assertEquals("Wroom", guitar.play());
+    }
+
+    @Test
+    void hasType() {
+        assertEquals(InstrumentType.BRASS, trumpet.getType());
     }
 }

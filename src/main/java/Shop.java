@@ -6,10 +6,8 @@ import java.util.List;
 
 public class Shop {
 
-    private final  String name;
+    private final String name;
     private final List<ISell> stock;
-
-
 
     public Shop(String name) {
         this.name = name;
@@ -20,7 +18,7 @@ public class Shop {
         return name;
     }
 
-    public List<ISell> getStock(){
+    public List<ISell> getStock() {
         return this.stock;
     }
 
@@ -28,7 +26,7 @@ public class Shop {
         this.stock.add(trumpet);
     }
 
-    public void removeItem(ISell item){
+    public void removeItem(ISell item) {
         this.stock.remove(item);
     }
 

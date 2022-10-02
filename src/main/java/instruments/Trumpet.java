@@ -4,13 +4,12 @@ import interfaces.ISell;
 
 public class Trumpet extends Instrument implements ISell {
 
-    private int valves;
-    private String description;
+    private final int valves;
 
     public Trumpet(double buyingPrice, double sellingPrice) {
-        super(buyingPrice, sellingPrice);
+        super(buyingPrice, sellingPrice, InstrumentType.BRASS);
         this.valves = 3;
-        this.description = "this is a trumpet";
+        this.setDescription("this is a trumpet");
     }
 
     public String play(){
@@ -21,7 +20,4 @@ public class Trumpet extends Instrument implements ISell {
         return this.valves;
     }
 
-    public String getDescription() {
-        return description;
-    }
 }

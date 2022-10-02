@@ -2,24 +2,20 @@ package instruments;
 
 public class Guitar extends Instrument{
 
-    private int strings;
-    private String description;
+    private final int strings;
 
     public Guitar(double buyingPrice, double sellingPrice) {
-        super(buyingPrice, sellingPrice);
+        super(buyingPrice, sellingPrice, InstrumentType.STRING);
         this.strings = 6;
-        this.description = "This is a guitar";
+        this.setDescription("This is a guitar");
     }
 
     public int getStrings() {
         return strings;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public String play() {
         return "Wroom";
     }
+
 }

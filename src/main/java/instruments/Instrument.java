@@ -5,12 +5,21 @@ import interfaces.ISell;
 
 public abstract class Instrument implements ISell, IPlay {
 
-    private double buyingPrice;
+    private final double buyingPrice;
     private double sellingPrice;
+    private String description;
+    private final InstrumentType type;
 
-    public Instrument(double buyingPrice, double sellingPrice) {
+    public Instrument(double buyingPrice, double sellingPrice, InstrumentType type) {
         this.buyingPrice = buyingPrice;
         this.sellingPrice = sellingPrice;
+        this.type = type;
+
+    }
+
+    @Override
+    public void setSellingPrice(double newPrice) {
+        this.sellingPrice = newPrice;
     }
 
     public double getBuyingPrice() {
@@ -23,5 +32,18 @@ public abstract class Instrument implements ISell, IPlay {
 
     public double getSellingPrice() {
         return sellingPrice;
+    }
+
+    public InstrumentType getType() {
+        return type;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

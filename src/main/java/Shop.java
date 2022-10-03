@@ -31,8 +31,22 @@ public class Shop {
     }
 
     public double getPotentialProfits() {
+//        return stock.stream()
+//                .mapToDouble(ISell::calculateMarkup)
+//                .sum();
+
+//        double profits = 0;
+//        for (ISell element : stock) profits += element.calculateMarkup();
+//        return profits;
+
         return stock.stream()
-                .mapToDouble(ISell::calculateMarkup)
-                .sum();
+                .map(ISell::calculateMarkup)
+                .reduce(0.0, (total, item) -> total + item); //(Double::sum)
+
+//        double profits = 0;
+//        for (int i = 0; i < stock.size(); i++){
+//            profits += stock.get(i).calculateMarkup();
+//        }
+//        return profits;
     }
 }

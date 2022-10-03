@@ -17,6 +17,7 @@ public class Item implements ISell {
     public double getBuyingPrice() {
         return buyingPrice;
     }
+
     public double getSellingPrice(){
         return this.sellingPrice;
     }
@@ -29,5 +30,10 @@ public class Item implements ISell {
     @Override
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public void setSellingPrice(double newPrice) {
+        this.sellingPrice = newPrice;
     }
 }

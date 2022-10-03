@@ -1,6 +1,4 @@
-import instruments.Guitar;
-import instruments.Instrument;
-import instruments.Trumpet;
+import instruments.*;
 import items.Item;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,6 +33,9 @@ class ShopTest {
     void canStockUpInstruments() {
         shop.addItemToStock(trumpet);
         assertEquals(trumpet, shop.getStock().get(0));
+        Piano piano = new Piano(2000, 2500, InstrumentType.KEYED);
+        shop.addItemToStock(piano);
+        assertEquals(piano, shop.getStock().get(1));
     }
 
     @Test

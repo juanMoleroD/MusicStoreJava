@@ -46,4 +46,8 @@ public abstract class Instrument implements ISell, IPlay {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String play(){
+        return "playing";
+    }
 }
